@@ -17,16 +17,34 @@ int main() {
 
     reverse(a.begin(), a.end());
 
+    vector<long long> pref(n);
+
+    pref[0] = a[0];
+
+    for(int i = 1; i < n; i++){
+        pref[i] = pref[i-1] + a[i];
+    }
+
     while(q--){
         int x, y;
 
         cin >> x >> y;
 
-        int resposta = 0;
+        long long resposta = 0;
 
         for(int i = x - y; i < x; i++){
             resposta += a[i];
         }
+
+        int l = x-y;
+        int r = x -1;
+
+        if(l != 0){
+            resposta = pref[r] - pref[l-1];
+        } else {
+            resposta = pref[r];
+        }
+
         cout << resposta << endl;
     }
     
