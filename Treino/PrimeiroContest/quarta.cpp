@@ -24,7 +24,7 @@ int main() {
 
         int resposta = 0;
 
-        for(i = x - y; i < x; i++){
+        for(int i = x - y; i < x; i++){
             resposta += a[i];
         }
         cout << resposta << endl;
