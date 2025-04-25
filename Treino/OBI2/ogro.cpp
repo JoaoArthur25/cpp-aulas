@@ -4,14 +4,14 @@ using namespace std;
 
 int main()
 {
-    int e, d, resultado = 0;
+    int e, d;
 
     cin >> e >> d;
 
-    if(e > d){
-        resultado = e + d;
+    if(e > d) {
+        cout << e + d << endl;
     } else {
-        resultado = 2 * (d - e);
+         cout << (2 * (d - e)) << endl;
     }
 
     return 0;
